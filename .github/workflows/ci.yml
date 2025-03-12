@@ -1,0 +1,51 @@
+name: CI with Python setup for Application
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Python
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Step 4: Run tests with pytest
+      - name: Run tests
+        run: |
+          source venv/bin/activate
+          pytest
+
+      # Step 5: Build the package (create dist folder with .tar.gz and .whl)
+      - name: Build package
+        run: |
+          source venv/bin/activate
+          python setup.py sdist bdist_wheel
+
+      # Step 6: Upload Build Artifact
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-python-app-package
+          path: dist/
