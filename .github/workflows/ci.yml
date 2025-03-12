@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.2.2
 
       - name: Set up Python 3.9
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v4.5.0
         with:
           python-version: '3.9'
 
@@ -40,7 +40,7 @@ jobs:
           python setup.py sdist bdist_wheel
 
       - name: Upload Build Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4.6.1
         with:
           name: my-python-app-package
           path: dist/
