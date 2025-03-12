@@ -28,7 +28,10 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Step 4: Run tests with pytest
+      - name: Set PYTHONPATH
+        run: |
+          echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
+
       - name: Run tests
         run: |
           source venv/bin/activate
