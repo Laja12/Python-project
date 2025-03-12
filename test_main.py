@@ -1,5 +1,5 @@
 # tests/test_main.py
-from my-python-app.main import add, subtract, multiply, divide
+from my_python_app.main import add, subtract, multiply, divide
 
 def test_add():
     assert add(2, 3) == 5
