@@ -10,7 +10,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "my-python-app = my-python-app.main:main",  # CLI entry point (if applicable)
+            "my_python_app = my_python_app.main:main",  # CLI entry point (if applicable)
         ]
     },
     # Other metadata for your package
@@ -19,7 +19,7 @@ setup(
     description="A simple math operations package",
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/your-username/my-python-app",
+    url="https://github.com/your-username/my_python_app",
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.9",
