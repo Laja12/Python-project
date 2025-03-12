@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="my-python-app",  # Package name
+    name="my_python_app",  # Package name
     version="0.1",
     packages=find_packages(),  # Automatically find all sub-packages
     install_requires=[
