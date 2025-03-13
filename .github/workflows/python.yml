@@ -1,4 +1,4 @@
-name: CI with Python setup for Application
+name: continous integration of python appliacation
 
 on:
   push:
