@@ -1,5 +1,7 @@
 name: CI with Python setup for Application
 
+run-name: ${{github.actor}}
+
 on:
   push:
     branches:
